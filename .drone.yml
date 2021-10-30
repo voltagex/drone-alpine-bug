@@ -1,0 +1,17 @@
+---
+kind: pipeline
+name: default
+
+- name: fails
+  image: alpine:3.14
+  commands:
+    - apk update && apk add make
+    - make
+  failure: ignore
+
+
+- name: succeeds
+  image: alpine:3.13
+  commands:
+    - apk update && apk add make
+    - make
