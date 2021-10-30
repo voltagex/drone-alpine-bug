@@ -4,7 +4,7 @@ name: default
 
 steps:
 - name: fails
-  image: alpine:3.14
+  image: alpine:latest
   commands:
     - apk update && apk add make
     - make
